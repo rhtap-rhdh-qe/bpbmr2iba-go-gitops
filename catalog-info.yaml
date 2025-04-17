@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: bpbmr2iba-go-gitops
+  description: This is GitOps manifest for bpbmr2iba-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=bpbmr2iba-go
+    backstage.io/kubernetes-id: bpbmr2iba-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: bpbmr2iba-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:bpbmr2iba-go
